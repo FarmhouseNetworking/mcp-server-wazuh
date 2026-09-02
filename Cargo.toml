@@ -9,7 +9,7 @@ repository = "https://github.com/gbrigandi/mcp-server-wazuh"
 readme = "README.md"
 
 [dependencies]
-wazuh-client = "0.1.8"
+wazuh-client = { version = "0.1.8", default-features = false, features = ["rustls"] }
 rmcp = { version = "0.10", features = ["server", "transport-io"] }
 tokio = { version = "1", features = ["full"] }
 reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
@@ -24,7 +24,6 @@ axum = { version = "0.8", optional = true }
 dotenv = "0.15"
 thiserror = "2.0"
 chrono = "0.4.41"
-openssl-sys = { version = "0.9", features = ["vendored"] }
 
 [dev-dependencies]
 mockito = "1.7"
